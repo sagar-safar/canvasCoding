@@ -37,6 +37,8 @@ function Circle(x,y,dx,dy,radius){
         
         c.fill()
 
+        this.update()
+
         
     
 
@@ -66,7 +68,7 @@ function Circle(x,y,dx,dy,radius){
 
         }
         
-        this.draw()
+        
         this.x = this.x+this.dx;
         this.y = this.y+this.dy;
 
@@ -105,7 +107,7 @@ function animate(){
     requestAnimationFrame(animate);
     c.clearRect(0,0,innerWidth,innerHeight);
     for(let i = 0;i<1000;i++){
-        circleArr[i].update()
+        circleArr[i].draw()
     }
 
    

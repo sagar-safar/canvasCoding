@@ -8,7 +8,7 @@ canvas.height = window.innerHeight
 
 
 var c = canvas.getContext('2d');
-var score = 0;
+
 
 function Circle(x,y,dx,dy,radius){
     this.x = x;
@@ -29,6 +29,8 @@ function Circle(x,y,dx,dy,radius){
         c.fillStyle = this.color;
         
         c.fill()
+
+        this.update()
 
         
     
@@ -52,7 +54,7 @@ function Circle(x,y,dx,dy,radius){
 
         
         
-        this.draw()
+        
         this.x = this.x+this.dx;
         this.y = this.y+this.dy;
         
@@ -126,7 +128,7 @@ function animate(){
     requestAnimationFrame(animate);
     c.clearRect(0,0,innerWidth,innerHeight);
     for(let i = 0;i<2;i++){
-        circleArr[i].update()
+        circleArr[i].draw()
     }
 
     checkCollison(circleArr[0],circleArr[1])
